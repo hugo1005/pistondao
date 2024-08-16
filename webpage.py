@@ -6,20 +6,20 @@ import base64
 # Load your car data into a pandas dataframe (replace 'cars.csv' with your data path)
 df = pd.read_csv('cars.csv')
 
-# def render_svg(svg):
-#     """Renders the given svg string."""
-#     b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
-#     html = r'<img src="data:image/svg+xml;base64,%s" alt="Car Price Analysis Dashboard" style="width: 275px;"/>' % b64
-#     return html
+def render_svg(svg):
+    """Renders the given svg string."""
+    b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
+    html = r'<img src="data:image/svg+xml;base64,%s" alt="Car Price Analysis Dashboard" style="width: 275px;"/>' % b64
+    return html
 
-# with open('logo.svg') as f:
-#     svg = f.read()
-#     logo_html = render_svg(svg)
+with open('logo.svg') as f:
+    svg = f.read()
+    logo_html = render_svg(svg)
 
 # # Title 
 
 # # Title with Markdown and logo
-# st.markdown(f"# {logo_html}", unsafe_allow_html=True)
+st.markdown(f"# {logo_html}", unsafe_allow_html=True)
 st.markdown(f"## Car Price Analysis Dashboard", unsafe_allow_html=True)
 
 st.write("This dashboard allows you to explore car prices by Year, make, and model. Use the filters on the left to narrow down your search.")
